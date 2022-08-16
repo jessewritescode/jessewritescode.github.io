@@ -2,11 +2,15 @@
     <head>
         <!-- Ortto jessetrackscode capture code -->
         <script>
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                            get: (searchParams, prop) => searchParams.get(prop),
+                        });
+
             window.ap3c = window.ap3c || {};
             var ap3c = window.ap3c;
             ap3c.cmd = ap3c.cmd || [];
             ap3c.cmd.push(function() {
-                            ap3c.init('YvnEcl_ALGKphrNKamVzc2V0cmFja3Njb2Rl', 'https://capture-api-master.stgautopilotapp.com/');
+                            ap3c.init(params.code || 'YvnEcl_ALGKphrNKamVzc2V0cmFja3Njb2Rl', params.localhost ? 'http://localhost:8080/' : 'https://capture-api-master.stgautopilotapp.com/');
                             ap3c.track({v: 0});
                         });
             ap3c.activity = function(act) { ap3c.act = (ap3c.act || []); ap3c.act.push(act); };
@@ -17,5 +21,9 @@
     </head>
     <body>
         <h1>ignore this. used for testing</h1>
+
+        <!-- This would represent injected widget code -->
+        <div style="position: fixed; bottom: 24px; right: 24px;"><button id='talk--btn' style="all: unset; cursor: pointer; border-radius: 50%; background: #E9923D; padding:14px 16px;"><svg viewBox="0 0 16 16" width="24px" height="24px" fill="icon.illustration" class="SvgIcon-sc-10le1p7-0 bHtIBu"><path d="M9.492 12.408l2.708.627-.47-.895a1 1 0 01.207-1.198c1.008-.934 1.564-2.167 1.564-3.47C13.5 4.732 11.033 2.5 8 2.5S2.5 4.73 2.5 7.473c0 2.742 2.467 4.973 5.5 4.973.31 0 .633-.028.985-.086a.996.996 0 01.505.048m4.607 3.092a.96.96 0 01-.226-.026l-4.784-1.107A7.763 7.763 0 018 14.446c-4.136 0-7.5-3.128-7.5-6.973C.5 3.628 3.864.5 8 .5s7.5 3.128 7.5 6.973c0 1.613-.585 3.142-1.662 4.378l1.144 2.185a.998.998 0 01-.886 1.464" fill-rule="evenodd" fill="#FFF"></path></svg></button></div>
+
     </body>
 </html>
