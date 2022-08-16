@@ -14,7 +14,7 @@
                             ap3c.track({v: 0});
                         });
             ap3c.activity = function(act) { ap3c.act = (ap3c.act || []); ap3c.act.push(act); };
-            var s, t; s = document.createElement('script'); s.type = 'text/javascript'; s.src = "https://static.ap3stg.com/capture/master/capture.js";
+            var s, t; s = document.createElement('script'); s.type = 'text/javascript'; s.src = params.localhost ? 'http://localhost:8080/' : "https://static.ap3stg.com/capture/master/capture.js";
             t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
         </script>
 
